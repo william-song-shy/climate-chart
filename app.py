@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,send_file
 from main import gen_plot
 import base64
 from io import BytesIO
@@ -15,4 +15,4 @@ def main():
     fig.savefig(buffer,format="png",dpi=300)
     buffer.seek(0)
     data = base64.b64encode(buffer.read()).decode("utf-8")
-    return f'<img src="data:image/png;base64,{data}"/>'
+    return send_file(BytesIO(base64.b64decode(data)),mimetype="image/png")
