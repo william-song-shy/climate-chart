@@ -6,7 +6,7 @@ from io import BytesIO
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def main():
     data = request.json
     name = data["name"]
