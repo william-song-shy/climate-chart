@@ -8,5 +8,10 @@ Using Flask and Matplotlib
 
 ### Examples
 
-![Lagos](example/Lagos.png)![Nuuk](example/Nuuk.png)
-![Romes](example/Romes.png)![Xi'An](example/Xi'An.png)
+|            Lagos            |           Nuuk            |
+|:---------------------------:|:-------------------------:|
+| ![Lagos](example/Lagos.png) | ![Nuuk](example/Nuuk.png) |
+
+|            Romes            |            Xi'An            |
+|:---------------------------:|:---------------------------:|
+| ![Romes](example/Romes.png) | ![Xi'An](example/Xi'An.png) |
