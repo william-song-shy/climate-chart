@@ -1,6 +1,6 @@
 from math import ceil, floor
 
-from matplotlib import pyplot as plt
+from matplotlib.figure import Figure
 from matplotlib.ticker import FuncFormatter, LinearLocator, FixedLocator
 
 data_test = {"prep": [54, 46, 50, 44, 58, 56, 53, 51, 56, 57, 58, 54],
@@ -14,7 +14,8 @@ def month_formatter(x, pos):
 
 
 def gen_plot(data, name=""):
-    fig, ax1 = plt.subplots()
+    fig = Figure()
+    ax1 = fig.subplots()
     ax1.xaxis.set_major_formatter(FuncFormatter(month_formatter))
     ax1.xaxis.set_ticks([x for x in range(12) if x % 3 == 1])
     fig.set_size_inches(5.5, 7)
