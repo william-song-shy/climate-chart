@@ -31,7 +31,7 @@ def gen_plot(data, name=""):
     ma = max(data["temp"])
     mi = floor(mi / 5) * 5
     ma = ceil(ma / 5) * 5
-    if ma - mi <= 30:
+    if ma - mi <= 25:
         ax2.set_ylim(ma - 25, ma)
         ax2.yaxis.set_major_locator(FixedLocator([ma - 25, ma - 20, ma - 15, ma - 10, ma - 5, ma]))
     else:
