@@ -14,4 +14,4 @@ Using Flask and Matplotlib
 
 |            Romes            |            Xi'An            |
 |:---------------------------:|:---------------------------:|
-| ![Romes](example/Romes.png) | ![Xi'An](example/Xi'An.png) |
+| ![Romes](example/Romes.png) | ![Xi'An](example/Xian.png) |
