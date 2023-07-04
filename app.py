@@ -66,6 +66,12 @@ class Query():
 
 app = Flask(__name__)
 
+@app.after_request
+def after_request(response):
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  return response
 
 @app.route("/", methods=["POST"])
 def main():
@@ -78,6 +84,4 @@ def main():
     fig.savefig(buffer, format="png", dpi=300)
     buffer.seek(0)
     data = base64.b64encode(buffer.read()).decode("utf-8")
-    return send_file(BytesIO(base64.b64decode(data)), mimetype="image/png"), 200, {
-        "Access-Control-Allow-Origin": "*",
-    }
+    return send_file(BytesIO(base64.b64decode(data)), mimetype="image/png")
